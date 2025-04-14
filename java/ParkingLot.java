@@ -13,17 +13,13 @@ public class ParkingLot {
         this.spots = new ParkingSpot[numSpots];
         for (int i = 0; i < numSpots; i++) {
             VehicleType type = (i % 3 == 0) ? VehicleType.MOTORCYCLE : (i % 3 == 1) ? VehicleType.CAR : VehicleType.BUS;
-            this.spots[i] = new ParkingSpot(type, i);
+            this.spots[i] = new ParkingSpot(type);
         }
     }
 
     public boolean park(Vehicle vehicle) {
         for (ParkingSpot spot : spots) {
             if (licensePlates.contains(vehicle.getLicensePlate())) {
-                return false;
-            }
-
-            if (!spot.isEmpty() && spot.getVehicle().getLicensePlate().equals(vehicle.getLicensePlate())) {
                 return false;
             }
             

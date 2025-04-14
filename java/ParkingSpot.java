@@ -9,11 +9,9 @@
 public class ParkingSpot {
     private Vehicle vehicle;
     private VehicleType type;
-    private int spotNumber;
 
-    public ParkingSpot(VehicleType type, int spotNumber) {
+    public ParkingSpot(VehicleType type) {
         this.type = type;
-        this.spotNumber = spotNumber;
         this.vehicle = null;
     }
 
@@ -41,9 +39,5 @@ public class ParkingSpot {
 
     public VehicleType getType() {
         return type;
-    }
-
-    public int getSpotNumber() {
-        return spotNumber;
     }
 }
